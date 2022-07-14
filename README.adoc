@@ -1,7 +1,7 @@
 = Make Alpine Linux VM Image
 :script-name: alpine-make-vm-image
 :script-sha1: 7b540622304a1f8c40646c0e8c95123ba1d57b05
-:gh-name: alpinelinux/{script-name}
+:gh-name: tryauuum/{script-name}
 :version: 0.8.0-custom
 
 ifdef::env-github[]
