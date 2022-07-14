@@ -487,6 +487,7 @@ EOF
 if [ "$SERIAL_PORT" ]; then
 	echo "$SERIAL_PORT" >> "$mount_dir"/etc/securetty
 	sed -Ei "s|^[# ]*($SERIAL_PORT:.*)|\1|" "$mount_dir"/etc/inittab
+	sed -Ei "s|^$SERIAL_PORT:.*|$SERIAL_PORT::respawn:/sbin/getty -n -l /bin/ash -L ttyS0 115200 vt100|" "$mount_dir"/etc/inittab
 fi
 
 #-----------------------------------------------------------------------
