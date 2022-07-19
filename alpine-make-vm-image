@@ -504,6 +504,13 @@ auto eth0
     iface eth0 inet dhcp
 EOF
 
+_apk add --root . openssh
+cat > etc/ssh/sshd_config << EOF
+PermitRootLogin yes
+PermitEmptyPasswords yes
+EOF
+
+rc_add default sshd
 rc_add boot modules hwclock swap hostname sysctl bootmisc syslog networking
 rc_add shutdown killprocs savecache mount-ro
 
